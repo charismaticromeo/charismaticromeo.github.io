@@ -4,9 +4,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-I am a developer and security analyst focused on the layers beneath the abstraction.
+I am a **developer** and **security analyst**.
 
-My work spans from building robust backend systems in Django and PostgreSQL to reverse-engineering binaries. I don't just write code; I want my source secure and perfomant.
+My work spans from building *backend systems in Flask, Django and PostgreSQL to breaking them*. I believe it makes a lot of
+difference to the quality of software when a developer is security conscious. Even more, when you have dedicated team that constantly
+veirfies your security posture and responds to queries.
 
 **What I actually do:**
 
@@ -14,7 +16,7 @@ My work spans from building robust backend systems in Django and PostgreSQL to r
 
  - **Systems Administration:** Navigating Linux environments, exploring Windows internals, and researching how systems fail and how to stop them from failing.
 
- - **Security & Low-Level Exploration:** As a wannabe hacker, I try my hand in penetration testing both on web apps and binaries, SoC analysis, and embedded systems. If there's a UART port, I’m looking for it.
+ - **Security & Low-Level Exploration:** I do web penetration testing, reverse engineering on binaries, and exploit development. If there's a UART port, I’m looking for it.
 
-This blog is a digital workbench where I document my experiments, from tactical project maneuvers to the lessons learned while breaking (and fixing) things.
+As far as this blog goes, it's my digital workbench where I document my experiments, from tactical project maneuvers to the lessons learned while breaking and fixing things.
 
