@@ -1,8 +1,9 @@
 ---
+layout: post
 title: "Batch Renaming Like A Pro"
 date: 2026-04-12
-Categories:
-  - Systems-Infractructure
+categories:
+  - Systems-Infrastructure
   - Bash
 tags:
   - automation

@@ -4,19 +4,18 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-I am a **developer** and **security analyst**.
+Hey, I am Charismatic Romeo, a Kenyan **Computer Security Analyst**.
 
-My work spans from building *backend systems in Flask, Django and PostgreSQL to breaking them*. I believe it makes a lot of
-difference to the quality of software when a developer is security conscious. Even more, when you have dedicated team that constantly
-veirfies your security posture and responds to queries.
+I find computer security interesting because of its sheer diversity. Today you are reversing binaries, tomorrow you're auditing
+a web codebase and the day after that you're high on soldering smoke :) - it's the perfect medicine for a mind that gets easily
+bored by doing just one thing. 
 
-**What I actually do:**
+Outside of security, I love to build things. I come from a heavy backend development background, so I still code quite a bit. 
 
- - **Backend & Data:** Designing reliable data pipelines and optimizing databases for real-world stress.
+While you're here, we will talk about system tooling (I use Neovim & tmux btw! ^-^;) and look at how to setup and
+optimize lightweight, efficient workflows. I will also be sharing my penetration testing experiences with various
+platforms and products through writeups and documentation.
 
- - **Systems Administration:** Navigating Linux environments, exploring Windows internals, and researching how systems fail and how to stop them from failing.
 
- - **Security & Low-Level Exploration:** I do web penetration testing, reverse engineering on binaries, and exploit development. If there's a UART port, I’m looking for it.
-
-As far as this blog goes, it's my digital workbench where I document my experiments, from tactical project maneuvers to the lessons learned while breaking and fixing things.
+[Let's Explore...]({{ site.baseurl }}/)
 

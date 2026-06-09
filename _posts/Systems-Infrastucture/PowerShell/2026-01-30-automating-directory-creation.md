@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Automating Directory Creation Across Multiple Paths in PowerShell"
 date: 2026-01-30
 categories: 
