@@ -17,13 +17,14 @@ tags:
 ## Introduction
 
 Injection vulnerabilities - from query injections to command injections - are among the worst nightmare for developers
-and maintainers but a sweetheart for hackers.
+and maintainers but a sweet spot for hackers.
 
 In this article, I'll walk through how I discovered a command injection vulnerability in a WiFi billing system that
 ultimately led to an authenticated root shell. But first before diving into the technical details, let's get some
 background story behind the discovery.
 
-If you're only interested in the exploitation and analysis, feel free to skip ahead to part 2.
+If you're only interested in the exploitation and analysis, feel free to skip ahead to the [discovery
+section]({% post_url 2026-06-05-how-gained-rce-on-a-wifi-billing-software %}#discovery).
 
 > **Disclaimer**: 
 > 
@@ -37,12 +38,13 @@ If you're only interested in the exploitation and analysis, feel free to skip ah
 Full disclosure: I wasn't out hunting bow and arrow when I found this bug. 
 
 My uncle had reached out after watching a reel about the internet reselling business and wanted to know what it would
-take to get setup. One of the requirements mentioned a billing system, and he asked whether I could build one. My short
-answer was Yes.
+take to get setup. One of the requirements mentioned was a billing system, and he asked whether I could build one. My
+short answer was a Yes.
 
 Before writing anything from scratch, I started exploring some of the open-source solutions available locally. One
 project in particular caught my attention; **The Reduzer WiFi Billing System**. I had seen it's author talk about it on
-**X**, I guess this is one of the importances of talking about your work.
+[**X**](https://x.com/_lennoxomondi/status/1855190328808001955?s=20), I guess this is one of the importances of talking
+about your work.
 
 My goal was to see what the existing solutions offered, evaluate whether they met the requirements, and identify any
 gaps that would need custom development. I wasn't looking to reinvent the wheel.
@@ -58,7 +60,7 @@ A quick glance revealed that the project is largely a wrapper around existing op
 integrates solutions such as **PHPNuxBill** and **RADIUS** server-client architecture, while adding **M-Pesa Daraja**
 integration and orcherstration logic to tie the components together into a deployable system - kudos to the author.
 
-To understand how everything fit together, I opened Neovim and started where most developers do: at the `README` file. Once I
+To understand how everything fits together, I opened Neovim and started where most developers do: at the `README` file. Once I
 had a rough idea of the installation and deployment process, I began working my way through the codebase one directory
 at a time.
 
@@ -153,9 +155,9 @@ had connectivity to the internal Docker network. Under these conditions, an atta
 To remediate this vulnerability and reduce the likelihood of similar issues in the future, the following measures are
 recommended:
 
-  1. **Validate and sanitize all user-supplied input.** User-controlled data should never be passed directly to shell
-     execution function. Where command execution is unavoidable, use parameterized APIs or proper escaping mechanisms
-     and enforce strict input validation.
+  1. **Validate and sanitize all user-supplied input.** User-controlled data should never be passed directly without
+     proper validation and sanitization. Use parameterized APIs or proper escaping mechanisms to escape dangerous
+     characters that might enable injection.
   1. **Require authentication and authorization.** Access to the `coa_handler.php` endpoint should be restricted to
      authenticated users and trusted services. Appropriate authorization checks should be implemented to ensure that
      only permitted users can perform CoA operations.
@@ -163,16 +165,16 @@ recommended:
      possible, limit access to trusted hosts, internal networks, or specific application components.
   1. **Apply the principle of least privilege.** Containers and services should run with only the permissions required
      for their intended function. Reducing privileges limits the potential impact of a successful compromise.
-  1. **Avoid constructing shell commands from user input.** Consider replacing shell-based interactions with native
-     libraries or APIs where possible. Eliminating shell invocation entirely removes a significant attack surface and
-     prevents command injection vulnerabilities by design.
 
-## Conclusion
+## Reporting & Disclosure
 
 I reported this vulnerability to the project maintainers on 30 April 2026. On 4 May 2026, I received a response
 acknowledging receipt of the report. During the discussion, the maintainers explained that the project had already been
 abandoned in favor of a newer solution. They also indicated that they would take the necessary action, and shortly
 thereafter the repository was archived.
+![Disclosure Feedback](/assets/images/Screenshot_20260609-093111.png)
+
+## Conclusion
 
 From a technical perspective, this vulnerability serves as a reminder of how seemingly small implementation decisions
 can introduce significant security risks. In this case, user-controlled input was allowed to reach a shell execution
