@@ -22,9 +22,8 @@ and maintainers but a sweet spot for hackers.
 In this article, I'll walk through how I discovered a command injection vulnerability in a WiFi billing system that
 ultimately led to an authenticated root shell. But first before diving into the technical details, let's get some
 background story behind the discovery.
-
 If you're only interested in the exploitation and analysis, feel free to skip ahead to the [discovery
-section]({% post_url 2026-06-05-how-gained-rce-on-a-wifi-billing-software %}#discovery).
+section]({% post_url CyberSecurity/Web-Security/2026-06-05-how-gained-rce-on-a-wifi-billing-software %}#discovery).
 
 > **Disclaimer**: 
 > 
